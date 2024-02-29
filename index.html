@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello from Docker Container</title>
+</head>
+<body>
+    <h1>Hello from Docker Container</h1>
+    <p>This is container: <span id="container-hash"></span></p>
+
+    <script>
+        // Fetch the container hash and update the page content
+        fetch('/container-hash')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('container-hash').textContent = data;
+            });
+    </script>
+</body>
+</html>
